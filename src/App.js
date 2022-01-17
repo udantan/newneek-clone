@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import Footer from "./components/Footer";
+import TopHeader from "./components/TopHeader";
+import Router from "./Router";
+import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
 
-function App() {
+const GlobalStyle = createGlobalStyle`
+  ${reset}
+  *{
+    box-sizing: border-box;
+  }
+`;
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <GlobalStyle />
+      <div style={{ backgroundColor: "#EAE7DE" }}>
+        <TopHeader />
+        <Router />
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
-
-export default App;
