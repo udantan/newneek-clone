@@ -14,8 +14,8 @@ export default function Home() {
         </Container>
         <TagNav />
         <GridWrapper>
-          {fakeDB.articles.map((article) => (
-            <Article {...article} />
+          {fakeDB.articles.map((article, i) => (
+            <Article key={i} {...article} />
           ))}
         </GridWrapper>
       </div>

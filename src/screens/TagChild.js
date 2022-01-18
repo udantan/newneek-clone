@@ -4,7 +4,6 @@ import tagObj from "../utils/tagObj";
 
 export default function TagChild() {
   const { id } = useParams();
-  console.log();
   return (
     <>
       <div>

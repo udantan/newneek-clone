@@ -4,7 +4,6 @@ import styled from "styled-components";
 import tagObj from "../utils/tagObj";
 
 export default function Article(props) {
-  console.log(props);
   return (
     <Container>
       <div>
@@ -23,6 +22,7 @@ export default function Article(props) {
 }
 const Container = styled.div`
   cursor: pointer;
+  filter: grayscale(100%);
   width: 340px;
   height: 340px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.6);
@@ -32,6 +32,7 @@ const Container = styled.div`
   justify-content: space-between;
   :hover {
     background-color: white;
+    filter: grayscale(0%);
   }
 `;
 

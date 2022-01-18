@@ -13,16 +13,16 @@ export default function TopHeader() {
           <img src={"/images/logo.png"} height={32} />
         </Link>
         <div style={{ display: "flex", borderCollapse: "collapse" }}>
-          <Box>
-            <Link to={"search"}>
+          <Link to={"search"}>
+            <Box>
               <FontAwesomeIcon icon={faSearch} size="1x" color="black" />
-            </Link>
-          </Box>
-          <Box style={{ borderLeft: "0" }}>
-            <Link to={"login"}>
+            </Box>
+          </Link>
+          <Link to={"login"}>
+            <Box style={{ borderLeft: "0" }}>
               <FontAwesomeIcon icon={faUser} size="1x" color="black" />
-            </Link>
-          </Box>
+            </Box>
+          </Link>
         </div>
       </Container>
     </>
