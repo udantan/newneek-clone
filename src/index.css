@@ -14,3 +14,7 @@
   font-family: "BM-Y";
   src: url(fonts/BM/BMYEONSUNG_ttf.ttf);
 }
+
+* {
+  scroll-behavior: smooth;
+}

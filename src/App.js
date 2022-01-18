@@ -5,6 +5,7 @@ import TopHeader from "./components/TopHeader";
 import Router from "./Router";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
+import ScrollToTop from "./utils/ScrollToTop";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -15,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <GlobalStyle />
       <div style={{ backgroundColor: "#EAE7DE" }}>
         <TopHeader />
