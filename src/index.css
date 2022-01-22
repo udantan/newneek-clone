@@ -18,3 +18,11 @@
 * {
   scroll-behavior: smooth;
 }
+
+.help {
+  letter-spacing: -.025rem;
+  text-indent: -1px;
+  padding: 4rem 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
