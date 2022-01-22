@@ -6,6 +6,7 @@ import Router from "./Router";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import ScrollToTop from "./utils/ScrollToTop";
+import "../src/index.css";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
