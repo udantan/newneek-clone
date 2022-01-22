@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import TagNav from "../components/TagNav";
 import styled from "styled-components";
 import fakeDB from "../utils/fakeDB";
 import Article from "../components/Article";
 
 export default function Home() {
+  const ref = useRef();
+
   return (
     <>
       <div>
@@ -13,15 +15,17 @@ export default function Home() {
           <div style={{ height: 425, backgroundColor: "#FF6B00" }}></div>
         </Container>
         <TagNav />
-        <GridWrapper>
+        <GridWrapper ref={ref}>
           {fakeDB.articles.map((article, i) => (
             <Article key={i} {...article} />
           ))}
         </GridWrapper>
+        {/* <button onClick={() => window.scrollTo({ top: 635 })}>go</button> */}
       </div>
     </>
   );
 }
+
 const GridWrapper = styled.div`
   justify-content: center;
   display: grid;
