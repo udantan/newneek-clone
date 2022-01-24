@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {DESC, DESC_UNSUBSCRIBE, DESC_NOARRIVAL} from "../utils/faqDB";
 import TextFieldStyle from "../utils/TextField.module.css";
+import "../help.css";
 
 export default function Help() {
     const [topicDesc, setTopicDesc] = useState(DESC);
