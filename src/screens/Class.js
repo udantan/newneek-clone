@@ -4,50 +4,52 @@ import "../class.css";
 
 export default function Class() {
   return (
-  <div>
-    <h2 className="class-title">고슴이 생존기 - 경제 기본기편</h2>
-    <div className="class-head">
-      <img src="https://newneek.co/static/media/economy-thumbnail.0e2ed4c5.png" alt="고슴이 생존기" className="class-thumbnail"/>
-      <div className="class-head-info">
-        <h2>고슴이와 함께 <br/>경제 기본기 마스터하겠슴?</h2>
-        <p>고슴이 에피소드 읽으면서 쉽고 재밌게 <br/>하루 5분으로 열흘 만에 경제 기본기를 마스터할 수 있어요.</p>
-        <div>
-        <ul>
-          <li>하루 5분</li>
-          <li>이용기간 무제한</li>
-        </ul>
-        <ul>
-          <li>에피소드 10개</li>
-          <li><del>얼리버드 500명(마감)</del></li>
-        </ul>
-        </div>
-        <div>
-          <del>\25,000</del>
-          <b>\16,000</b>
-          <p>(36% 할인)</p>
-        </div>
-        <div>
-          <button>콘텐츠 구매하기<div>(화살표넣기)</div></button>
-          <button>공유</button>
+  <div className="class-all">
+    <section className="class">
+      <h2 className="class-title">고슴이 생존기 - 경제 기본기편</h2>
+      <div className="class-head">
+        <img src="https://newneek.co/static/media/economy-thumbnail.0e2ed4c5.png" alt="고슴이 생존기" className="class-thumbnail"/>
+        <div className="class-head-info">
+          <h2>고슴이와 함께 <br/>경제 기본기 마스터하겠슴?</h2>
+          <p className="class-head-info-desc">고슴이 에피소드 읽으면서 쉽고 재밌게 <br/>하루 5분으로 열흘 만에 경제 기본기를 마스터할 수 있어요.</p>
+          <div className="minicard">
+            <ul className="minicard-1">
+              <li><i className="minicard-emoji">⏰</i>하루 5분</li>
+              <li><i className="minicard-emoji">🗓️</i>이용기간 무제한</li>
+            </ul>
+            <ul className="minicard-2">
+              <li><i className="minicard-emoji">📖</i>에피소드 10개</li>
+              <li><i className="minicard-emoji">🤼</i><del>얼리버드 500명(마감)</del></li>
+            </ul>
+          </div>
+          <div className="class-head-price">
+            <del>\25,000</del>
+            <p>\16,000</p>
+            <p style={{color:"#ff6b00"}}>(36% 할인)</p>
+          </div>
+          <div className="class-head-button">
+            <button className="buy_bt">콘텐츠 구매하기<i>→</i></button>
+            <button className="share_bt">공유</button>
+          </div>
         </div>
       </div>
-    </div>
-    <section>
-      <div>
+    </section>
+    <section className="class-main">
+      <div className="class-main-head">
         <img src="https://newneek.co/static/media/economy-logo.ef18c74e.png" alt="생존기 -경제 기본기편-"/>
-        <p>주식부터 환율까지 삶에서 필수적인 경제 개념들을 마스터합니다.<br/>
+        <p className="class-main-head-desc">주식부터 환율까지 삶에서 필수적인 경제 개념들을 마스터합니다.<br/>
   총 10개의 주제는 5분 분량의 기사로 구성되어 있으며, 경제초보 고슴이의 성장기를 담았답니다.</p>
       </div>  
       <div className="zigzag"></div>
       <div>
-        <h2>경제라니...<br/>나 좀 머리 아파. 왜 읽어야 해?</h2>
-        <div>
-          <div>
+        <h2 className="class-main-why">경제라니...<br/>나 좀 머리 아파. 왜 읽어야 해?</h2>
+        <div className="class-main-why-desc">
+          <div className="class-main-why-desc-item">
             <i>🌏</i>
             <span>세상을 이해하려면, 경제는 필수니까</span>
             <p>하지만 학교, 학원, 부모님도 제대로 안 알려준 그것. 경제를 안다는 건 우리 사회가 어떻게 굴러가는지 이해하고 해석하기 위해 꼭 필요한 첫걸음이죠.</p>
           </div>
-          <div>
+          <div className="class-main-why-desc-item">
             <i>💰</i>
             <span>10년 후에도 내 지갑이 귀여울 순 없어</span>
             <p>뉴닉과 함께 경제의 기초 체력을 쌓아두면, 분명 뉴닉 기사와 신문이 다르게 읽힐 거고요. 다른 세상이 열리면, 저금만 하던 나의 경제 생활과 선택도 한층 달라질 겁니다.</p>
