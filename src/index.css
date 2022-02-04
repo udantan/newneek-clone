@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "BM-Pro";
+  src: url(fonts/BM/BMHANNAPro.ttf);
+}
+@font-face {
+  font-family: "BM-Air";
+  src: url(fonts/BM/BMHANNAAir_ttf.ttf);
+}
+@font-face {
+  font-family: "BM-E";
+  src: url(fonts/BM/BMEULJIROTTF.ttf);
+}
+@font-face {
+  font-family: "BM-Y";
+  src: url(fonts/BM/BMYEONSUNG_ttf.ttf);
+}
+
+* {
+  scroll-behavior: smooth;
+}
