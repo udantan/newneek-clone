@@ -1,0 +1,29 @@
+.class-title{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.class-head{
+    display: flex;
+    max-width: 1360px;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: -1px auto;
+    padding: 0 5%;
+}
+
+.class-thumbnail{
+    border: 1px solid black;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.class-head .class-head-info{
+    width: 50%;
+    padding: 0 0 0 6rem;
+}

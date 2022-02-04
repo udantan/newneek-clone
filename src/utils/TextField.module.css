@@ -1,0 +1,28 @@
+
+.textfieldinput{
+    display: block;
+    margin: 1rem 0;
+    width: 100%;
+    padding: 1rem;
+}
+
+.desc{
+    font: inherit;
+    font-size: 14px;
+}
+
+.privacytitle{
+    font-weight: 1000;
+    padding: 1rem 0;
+}
+
+.privacydesc{
+    padding: 0 0 1rem 0;
+}
+
+.contactbtn{
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    padding: 1rem 4em;
+}
