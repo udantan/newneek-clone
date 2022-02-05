@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Article from "../components/Article";
 import { MoreButton } from "./Home";
 import axios from "axios";
+import Loading from "../components/Loading";
 
 const TAGS = {
   "2022-presidential-election": { text: "대선", icon: "🗳" },
@@ -43,24 +44,27 @@ export default function TagChild() {
     getArticlesbyTag();
   }, [id]);
   return (
-    <Container>
-      <GridWrapper>
-        <TitleContainer>
-          <h1>{TAGS[id].icon}</h1>
-          <h1>{TAGS[id].text}</h1>
-        </TitleContainer>
-        {articles.map((article) => (
-          <Article key={article.id} {...article} category={TAGS[id].text} />
-        ))}
-      </GridWrapper>
-      {articles.length > 1 && (
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <MoreButton disabled={loading} onClick={() => setOffset(offset + 12)}>
-            더보기
-          </MoreButton>
-        </div>
-      )}
-    </Container>
+    <>
+      {loading && articles.length < 1 && <Loading />}
+      <Container>
+        <GridWrapper>
+          <TitleContainer>
+            <h1>{TAGS[id].icon}</h1>
+            <h1>{TAGS[id].text}</h1>
+          </TitleContainer>
+          {articles.map((article) => (
+            <Article key={article.id} {...article} category={TAGS[id].text} />
+          ))}
+        </GridWrapper>
+        {articles.length > 1 && (
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <MoreButton disabled={loading} onClick={() => setOffset(offset + 12)}>
+              더보기
+            </MoreButton>
+          </div>
+        )}
+      </Container>
+    </>
   );
 }
 const Container = styled.div`

@@ -8,6 +8,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { useForm } from "react-hook-form";
 import Button from "@mui/material/Button";
+import Loading from "../components/Loading";
 export default function Home() {
   const { handleSubmit, register, formState } = useForm({ mode: "onSubmit" });
   const [articles, setArticles] = useState([]);
@@ -29,6 +30,7 @@ export default function Home() {
 
   return (
     <>
+      {loading && articles.length < 1 && <Loading />}
       <div>
         <Container>
           <Intro
@@ -153,18 +155,20 @@ export default function Home() {
           </div>
         </Container>
         <TagNav />
-        <GridWrapper>
-          {articles.map((article) => (
-            <Article key={article.id} {...article} />
-          ))}
-        </GridWrapper>
-        {articles.length > 1 && (
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <MoreButton disabled={loading} onClick={() => setOffset(offset + 12)}>
-              더보기
-            </MoreButton>
-          </div>
-        )}
+        <div style={{ padding: "0px 25px" }}>
+          <GridWrapper>
+            {articles.map((article) => (
+              <Article key={article.id} {...article} />
+            ))}
+          </GridWrapper>
+          {articles.length > 1 && (
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <MoreButton disabled={loading} onClick={() => setOffset(offset + 12)}>
+                더보기
+              </MoreButton>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );
