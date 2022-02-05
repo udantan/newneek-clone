@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import TagNav from "../components/TagNav";
 import styled from "styled-components";
 import Article from "../components/Article";
@@ -23,11 +23,9 @@ export default function Home() {
   useEffect(() => {
     getArticles();
   }, [offset]);
-  const ref = useRef();
   const onValid = (data) => {
     console.log(data);
   };
-  console.log(formState.errors);
 
   return (
     <>
@@ -155,7 +153,7 @@ export default function Home() {
           </div>
         </Container>
         <TagNav />
-        <GridWrapper ref={ref}>
+        <GridWrapper>
           {articles.map((article) => (
             <Article key={article.id} {...article} />
           ))}
@@ -205,7 +203,7 @@ const Intro = styled.div`
   justify-content: center;
   background-color: ${colors.beige};
 `;
-const MoreButton = styled.button`
+export const MoreButton = styled.button`
   cursor: pointer;
   font-weight: 700;
   background-color: white;

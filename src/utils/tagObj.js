@@ -11,4 +11,5 @@ const tagObj = {
   커뮤니티: { slug: "community", icon: "🗣" },
   // "-": { slug: "", icon: "📃" },
 };
+
 export default tagObj;
