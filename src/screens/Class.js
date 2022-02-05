@@ -1,17 +1,20 @@
 import React from "react";
 import { useState } from "react";
-import classStyle from "../components/class.module.css";
 import "../class.css";
 import { Link } from "react-router-dom";
+import faq_content from "../utils/classFaqDB";
+import Faq from "../components/Faq";
 
 export default function Class() {
   const [state, setState] = useState(false);
+  const [questions, setQuestions] = useState(faq_content);
 
   const ChangeState = ()=>{
     setState(!state);
     console.log(state);
   }
 
+  
   return (
   <div className="class-all">
     <section className="class">
@@ -247,13 +250,10 @@ export default function Class() {
       <div className="zigzag"></div>
       <div className="class-faq">
         <h2>자주 묻는 질문</h2>
-        <section className="class-faq-box">
-          <div className="faq-item">
-            <button className="que" onClick={ChangeState}>Q. 난이도가 어떻게 되나요?<i className="arrow"></i></button>
-            <div className="ans" >
-              {state?"기초가 하나도 없는 사람도 쉽고 재밌게 이해할 수 있도록 자세히 설명했으니 너무 겁 먹지 말고 신청해봐요!":""}
-            </div>
-          </div>
+        <section className="class-faq-box" >
+          {questions.map((current)=>{
+            return <Faq key={current.id} {...current}/>;
+          })}
         </section>
         <p>더 궁금한 것이 있다면 <Link to={"/help"}>👉고객센터</Link>로 문의해 주세요. 고맙슴!</p> 
       </div>

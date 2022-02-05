@@ -308,9 +308,5 @@ del{
 }
 
 .ans{
-    display: none;
-}
-
-.ans .active{
-    display: block;
+   padding: 1rem; 
 }
