@@ -14,7 +14,22 @@
   font-family: "BM-Y";
   src: url(fonts/BM/BMYEONSUNG_ttf.ttf);
 }
-
+@font-face {
+  font-family: "NotoSans";
+  src: url(fonts/NotoSans/NotoSansCJKkr-Regular.otf);
+}
 * {
   scroll-behavior: smooth;
+}
+
+h2,
+h3 {
+  font-weight: 700;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.noto {
+  font-family: "NotoSans";
 }

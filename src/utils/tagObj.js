@@ -1,13 +1,15 @@
 const tagObj = {
-  "2022-presidential-election": { text: "대선", icon: "🗳" },
-  politics: { text: "정치", icon: "⚖️" },
-  economy: { text: "경제", icon: "💰" },
-  world: { text: "세계", icon: "🌐" },
-  tech: { text: "테크", icon: "🤖" },
-  labor: { text: "노동", icon: "💪" },
-  "new-normal": { text: "뉴노멀", icon: "💡" },
-  culture: { text: "문화", icon: "🎞" },
-  life: { text: "라이프", icon: "🧘" },
-  community: { text: "커뮤니티", icon: "🗣" },
+  대선: { slug: "2022-presidential-election", icon: "🗳" },
+  정치: { slug: "politics", icon: "⚖️" },
+  경제: { slug: "economy", icon: "💰" },
+  세계: { slug: "world", icon: "🌐" },
+  테크: { slug: "tech", icon: "🤖" },
+  노동: { slug: "labor", icon: "💪" },
+  뉴노멀: { slug: "new-normal", icon: "💡" },
+  문화: { slug: "culture", icon: "🎞" },
+  라이프: { slug: "life", icon: "🧘" },
+  커뮤니티: { slug: "community", icon: "🗣" },
+  // "-": { slug: "", icon: "📃" },
 };
+
 export default tagObj;
