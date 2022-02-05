@@ -250,11 +250,7 @@ export default function Class() {
       <div className="zigzag"></div>
       <div className="class-faq">
         <h2>자주 묻는 질문</h2>
-        <section className="class-faq-box" >
-          {questions.map((current)=>{
-            return <Faq key={current.id} {...current}/>;
-          })}
-        </section>
+        <Faq/>
         <p>더 궁금한 것이 있다면 <Link to={"/help"}>👉고객센터</Link>로 문의해 주세요. 고맙슴!</p> 
       </div>
     </section>

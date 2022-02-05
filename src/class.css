@@ -287,7 +287,6 @@ del{
 /* 자주 묻는 질문 */
 .faq-item{
     border: 1px solid black;
-    background-color: white;
 }
 
 .faq-item .arrow{
@@ -304,9 +303,9 @@ del{
     background-color: transparent;
     cursor: pointer;
     font-size: 1.25rem;
-    padding: 1rem;
+    padding: 1rem 2rem;
 }
 
 .ans{
-   padding: 1rem; 
+   padding: 1rem 2rem; 
 }
