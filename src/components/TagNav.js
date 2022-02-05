@@ -11,10 +11,10 @@ export default function TagNav() {
         <StyledLink to={"/"}>전체</StyledLink>
       </StyledDiv>
       {Object.keys(tagObj).map((tag, i) => (
-        <StyledDiv key={i} borderBottom={pathname === `/tag/${tag}`}>
-          <StyledLink to={`/tag/${tag}`}>
+        <StyledDiv key={i} borderBottom={pathname === `/tag/${tagObj[tag].slug}`}>
+          <StyledLink to={`/tag/${tagObj[tag].slug}`}>
             {tagObj[tag].icon}
-            {tagObj[tag].text}
+            {tag}
           </StyledLink>
         </StyledDiv>
       ))}

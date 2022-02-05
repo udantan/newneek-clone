@@ -9,14 +9,17 @@ import TagChild from "./screens/TagChild";
 
 export default function Router() {
   return (
-    <Routes>
-      <Route index element={<Home />} />
-      <Route path="tag" element={<Tag />}>
-        <Route path=":id" element={<TagChild />} />
-      </Route>
-      <Route path="post/:id" element={<Post />} />
-      <Route path="login" element={<Login />} />
-      <Route path="signup" element={<SignUp />} />
-    </Routes>
+    <div>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="tag" element={<Tag />}>
+          <Route path=":id" element={<TagChild />} />
+        </Route>
+        <Route path="post/:id" element={<Post />} />
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<SignUp />} />
+        {/* <Route path="search" element={<SignUp />} /> */}
+      </Routes>
+    </div>
   );
 }
