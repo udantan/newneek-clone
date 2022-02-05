@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import classStyle from "../components/class.module.css";
 import "../class.css";
+import { Link } from "react-router-dom";
 
 export default function Class() {
   const [state, setState] = useState(false);
@@ -239,7 +240,7 @@ export default function Class() {
           </div>
           <div className="class-notice-desc-item">
             <h3>환불 정책</h3>
-            <p>결제 후 열람을 시작한 경우에는 결제된 금액은 환불해드리지 않습니다. 결제 후 어떤 콘텐츠도 열람하지 않으신 경우에는, 결제일로부터 7일 이내에 <a href="/help">👉고객센터</a>로 요청해주시면 환불을 도와드립니다.</p>
+            <p>결제 후 열람을 시작한 경우에는 결제된 금액은 환불해드리지 않습니다. 결제 후 어떤 콘텐츠도 열람하지 않으신 경우에는, 결제일로부터 7일 이내에 <Link to={"/help"}>👉고객센터</Link>로 요청해주시면 환불을 도와드립니다.</p>
           </div>
         </div>
       </div>
@@ -254,7 +255,7 @@ export default function Class() {
             </div>
           </div>
         </section>
-        <p>더 궁금한 것이 있다면 <a href="/help" >👉고객센터</a>로 문의해 주세요. 고맙슴!</p>
+        <p>더 궁금한 것이 있다면 <Link to={"/help"}>👉고객센터</Link>로 문의해 주세요. 고맙슴!</p> 
       </div>
     </section>
   </div>
