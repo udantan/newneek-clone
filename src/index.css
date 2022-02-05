@@ -17,5 +17,8 @@
 
 * {
   scroll-behavior: smooth;
-  font: 14px;
+}
+
+h2, h3{
+  font-weight: 700;
 }
