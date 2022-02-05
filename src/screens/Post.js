@@ -70,7 +70,7 @@ export default function Post() {
             >
               좋았슴
             </h1>
-            <h1 style={{ fontFamily: "BM-Pro" }}>{footer.likesCount}</h1>
+            <h1 style={{ fontFamily: "BM-Pro" }}>{footer?.likesCount}</h1>
           </div>
           <div style={{ display: "flex", gap: 10 }}>
             <Box style={{ backgroundColor: "#3b5998" }}>

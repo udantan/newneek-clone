@@ -1,0 +1,316 @@
+.class {
+    display: block;
+}
+
+a{
+    color: #ff6b00;
+}
+
+hr{
+    margin: 0;
+}
+
+.zigzag {
+    background: url(./components/zigzag.png) 50% no-repeat;
+    background-size: contain;
+    position: relative;
+    height: 22px;
+    margin: 6rem 0 7rem;
+    z-index: 1;}
+
+/* class head */
+
+.class-title{
+    display: block;
+    width: 100%;
+    margin-bottom: -1px;
+    padding: 1rem 0;
+    border-bottom: 1px solid #051619;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.class-head{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-items: center;
+    align-items: center;
+    max-width: 1360px;
+    margin: -1px auto;
+    padding: 0 5%;
+    position: relative;
+}
+
+.class-thumbnail{
+    border: 1px solid black;
+    width: 50%;
+}
+
+.class-head .class-head-info{
+    width: 50%;
+    padding: 0 0 0 6rem;
+}
+
+.class-head-info h2{
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.4rem;
+}
+
+.class-head-info-desc{
+    padding: 2rem 0;
+    font-size: 1.2rem;
+}
+
+.minicard {
+    display: flex;
+    justify-content: space-between;
+}
+
+.minicard li{
+    padding: 0.5rem 0;
+}
+
+.minicard-emoji{
+    padding: 0 1rem 0 0;
+}
+
+.class-head-price{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0;
+    font-size: 1.25rem;
+}
+
+del{
+    color: #999;
+    padding-right: 0.5rem;
+}
+
+.class-head-price p{
+    font-weight: bold;
+}
+
+.class-head-button{
+    width: 500px;
+    display: flex;
+}
+
+.class-head-button .buy_bt{
+    width: 80%;
+    background-color: #ff6b00;
+    border: 1px solid black;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+}
+
+.class-head-button .share_bt{
+    width: 20%;
+    border-radius: 0 10px 10px 0;
+    border: 1px solid black;
+    padding: 1rem 0;
+}
+
+/* class - main */
+
+.class-main{
+    display: block;
+    width: 1000px;
+    margin: auto;
+}
+
+.class-main h2{
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 3rem 0;
+}
+
+.class-main-head{
+    text-align: center;
+    padding : 2rem 0;
+}
+
+.class-main-head-desc{
+    padding: 1rem 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.class-main-why{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.class-main-why-desc{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0.5rem;
+}
+
+.class-main-why-desc-item{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.class-main-why-desc-item *{
+    margin: 0.5rem 0;
+}
+
+.class-main-why-desc-item i{
+    font-size: 3rem;
+}
+
+.class-main-why-desc-item span{
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.class-main-who .thisguy{
+    margin: 2rem 0;
+}
+
+.class-main-who-desc{
+    display: flex;
+    position: relative;
+    margin: 2rem 0;
+}
+
+.class-main-who-desc i{
+    display: flex;
+    align-items: center;
+   font-size: 1.75rem; 
+   margin-right: 1rem;
+}
+
+.class-main-who-desc-item h3{
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.class-main-who li, .and-too{
+    margin: 0 0 1rem 1rem;
+    list-style-type: square;
+}
+
+.class-main-spec-desc{
+    display: flex;
+    justify-content: space-between;
+}
+
+.class-main-spec-desc-item{
+    width: 30%;
+}
+
+.class-main-spec-desc-item span{
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.class-main-spec-desc-item h3{
+    margin: 1rem 0;
+    font-weight: 700;
+}
+
+.class-main-spec-desc-item p{
+    line-height: 1.5;
+    font-size: 0.8rem;
+    font-weight: lighter;
+}
+
+/* episode */
+
+.class-main-episode-box{
+    display: flex;
+}
+.class-main-episode-box img{
+    width: 30%;
+    padding: 1rem;
+    background-color: white;
+    border : 1px solid black;
+}
+
+.episode-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    border: 1px solid black;
+    border-left: 0;
+}
+
+/* 후기 */
+.class-review header{
+    margin: 0 0 4rem;
+}
+
+.review-box{
+    display: flex;
+    justify-content: space-between;
+}
+.review-item{
+    width: 30%;
+    border: 1px solid black;
+    padding: 2rem;
+}
+
+.review-item p:nth-child(2){
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+
+/* 안내말씀/주의사항 */
+
+.class-notice-desc{
+    display: block;
+    padding: 2rem;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.class-notice-desc-item{
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.class-notice-desc-item h3{
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+
+/* 자주 묻는 질문 */
+.faq-item{
+    border: 1px solid black;
+    background-color: white;
+}
+
+.faq-item .arrow{
+    border: 5px solid transparent;
+    border-top-color: black;
+    vertical-align: middle;
+}
+
+.que{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.25rem;
+    padding: 1rem;
+}
+
+.ans{
+    display: none;
+}
+
+.ans .active{
+    display: block;
+}
