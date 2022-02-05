@@ -1,18 +1,9 @@
 import React from "react";
-import { useState } from "react";
 import "../class.css";
 import { Link } from "react-router-dom";
-import faq_content from "../utils/classFaqDB";
 import Faq from "../components/Faq";
 
 export default function Class() {
-  const [state, setState] = useState(false);
-  const [questions, setQuestions] = useState(faq_content);
-
-  const ChangeState = ()=>{
-    setState(!state);
-    console.log(state);
-  }
 
   
   return (
