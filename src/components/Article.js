@@ -1,23 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import tagObj from "../utils/tagObj";
 
 export default function Article(props) {
   const cleanText = props.contentMain.replace(/<\/?[^>]+(>|$)/g, "");
   return (
-    <Container>
-      <div>
-        <TagIcon>{props.category !== "-" ? tagObj[props.category].icon : "📃"}</TagIcon>
-        <Title>{props.sumupTitle}</Title>
-        <SubTitleContainer>
-          <SubTitle>{cleanText}</SubTitle>
-        </SubTitleContainer>
-      </div>
-      <div>
-        <FooterText>{props.publishDt}</FooterText>
-        <FooterText>{props.category}</FooterText>
-      </div>
-    </Container>
+    <Link to={`/post/${props.id}`}>
+      <Container>
+        <div>
+          <TagIcon>{props.category !== "-" ? tagObj[props.category].icon : "📃"}</TagIcon>
+          <Title>{props.sumupTitle}</Title>
+          <SubTitleContainer>
+            <SubTitle>{cleanText}</SubTitle>
+          </SubTitleContainer>
+        </div>
+        <div>
+          <FooterText>{props.publishDt}</FooterText>
+          <FooterText>{props.category !== "-" ? props.category : ""}</FooterText>
+        </div>
+      </Container>
+    </Link>
   );
 }
 const Container = styled.div`

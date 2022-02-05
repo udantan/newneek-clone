@@ -18,7 +18,7 @@ export default function Router() {
         <Route path="post/:id" element={<Post />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
-        {/* <Route path="search" element={<SignUp />} /> */}
+        {/* <Route path="search" element={<SignUp />} />post */}
       </Routes>
     </div>
   );
