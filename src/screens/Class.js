@@ -9,7 +9,7 @@ export default function Class() {
   return (
   <div className="class-all">
     <section className="class">
-      <h2 className="class-title">고슴이 생존기 - 경제 기본기편</h2>
+      <h2 className="class-title">고슴이 생존기 - 경제 기본기편 나나나나</h2>
       <div className="class-head">
         <img src="https://newneek.co/static/media/economy-thumbnail.0e2ed4c5.png" alt="고슴이 생존기" className="class-thumbnail"/>
         <div className="class-head-info">
