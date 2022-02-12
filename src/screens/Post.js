@@ -3,12 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import styled from "styled-components";
 import colors from "../utils/colors";
 import tagObj from "../utils/tagObj";
 import { LinearProgress } from "@mui/material";
 export default function Post() {
+  const location = useLocation();
+
   const ref = useRef();
   const headerRef = useRef();
   const [article, setArticle] = useState();
@@ -31,12 +33,13 @@ export default function Post() {
     } else {
       setProgress(0);
     }
-    console.log(window.scrollY);
   };
   useEffect(() => {
     getArticle();
-    // setHeight(ref.current.clientHeight);
     window.addEventListener("scroll", handleScroll);
+    return function cleanupListener() {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (

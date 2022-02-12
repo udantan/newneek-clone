@@ -9,6 +9,7 @@ import TagChild from "./screens/TagChild";
 import Class from "./screens/Class";
 import Help from "./screens/Help";
 import Search from "./screens/Search";
+import SearchResult from "./screens/SearchResult";
 
 export default function Router() {
   return (
@@ -19,6 +20,7 @@ export default function Router() {
       </Route>
       <Route path="post/:id" element={<Post />} />
       <Route path="search" element={<Search />} />
+      <Route path="search/posts/:keyword" element={<SearchResult />} />
 
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<SignUp />} />

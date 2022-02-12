@@ -18,6 +18,7 @@ export default function Home() {
     setLoading(true);
     let URL = "https://api.newneek.co/postview/articles";
     const { data } = await axios.get(URL, { params: { offset: offset, limit: 12 } });
+    console.log("HOME", data);
     setArticles([...articles, ...data]);
     setLoading(false);
   };
