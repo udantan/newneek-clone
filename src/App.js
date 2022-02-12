@@ -13,6 +13,11 @@ const GlobalStyle = createGlobalStyle`
   *{
     box-sizing: border-box;
   }
+
+  ::selection{
+    background-color : black;
+    color : white;
+  }
 `;
 export default function App() {
   return (
