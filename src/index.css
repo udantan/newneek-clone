@@ -21,6 +21,9 @@
 * {
   scroll-behavior: smooth;
 }
+.noto {
+  font-family: "NotoSans";
+}
 
 h2,
 h3 {
@@ -29,7 +32,4 @@ h3 {
 a {
   text-decoration: none;
   color: black;
-}
-.noto {
-  font-family: "NotoSans";
 }

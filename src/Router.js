@@ -8,6 +8,7 @@ import Tag from "./screens/Tag";
 import TagChild from "./screens/TagChild";
 import Class from "./screens/Class";
 import Help from "./screens/Help";
+import Search from "./screens/Search";
 
 export default function Router() {
   return (
@@ -17,6 +18,8 @@ export default function Router() {
         <Route path=":id" element={<TagChild />} />
       </Route>
       <Route path="post/:id" element={<Post />} />
+      <Route path="search" element={<Search />} />
+
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<SignUp />} />
       <Route path="class" element={<Class />} />
