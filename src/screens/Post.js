@@ -2,50 +2,35 @@ import { faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "@mui/material";
 import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
+import ArticleProgress from "../components/ArticleProgress";
 import colors from "../utils/colors";
 import tagObj from "../utils/tagObj";
-import { LinearProgress } from "@mui/material";
 export default function Post() {
-  const location = useLocation();
-
   const ref = useRef();
   const headerRef = useRef();
   const [article, setArticle] = useState();
   const [header, setHeader] = useState();
   const [footer, setFooter] = useState();
-  const [progress, setProgress] = useState(-1);
   const { id } = useParams();
-  const getArticle = async () => {
+  const getArticle = useCallback(async () => {
     const url = `https://api.newneek.co/postview/articles/${id}`;
     const { data } = await axios.get(url);
     setArticle(data.contentMain);
     setHeader({ category: data.category, title: data.sumupTitle, date: data.publishDt });
     setFooter({ tags: data.tags, likesCount: data.likesCount });
-  };
-  const handleScroll = () => {
-    if (window.scrollY > ref.current.clientHeight - window.innerHeight) {
-      setProgress(100);
-    } else if (window.scrollY > 125 + headerRef.current.clientHeight) {
-      setProgress((window.scrollY * 100) / (ref.current.clientHeight - window.innerHeight));
-    } else {
-      setProgress(0);
-    }
-  };
+  }, [id]);
+
   useEffect(() => {
     getArticle();
-    window.addEventListener("scroll", handleScroll);
-    return function cleanupListener() {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  }, [getArticle]);
 
   return (
     <Container ref={ref}>
       {header !== undefined && (
-        <TitleContainer ref={headerRef} tt={progress}>
+        <TitleContainer ref={headerRef}>
           {header.category !== "-" && (
             <Link
               style={{ color: colors.orange, fontSize: 18, textDecoration: "underline", fontFamily: "BM-Pro" }}
@@ -58,19 +43,7 @@ export default function Post() {
           <h1 style={{ fontSize: 18, fontFamily: "BM-Air" }}>{header.date}</h1>
         </TitleContainer>
       )}
-      <ProgressContainer progress={progress}>
-        <LinearProgress
-          sx={{
-            height: 55,
-            backgroundColor: "white",
-            color: colors.orange,
-          }}
-          color="inherit"
-          variant="determinate"
-          value={progress}
-        />
-        {progress > 0 && <ProgressTitle>{header?.title}</ProgressTitle>}
-      </ProgressContainer>
+      <ArticleProgress title={header?.title} mainRef={ref} headerRef={headerRef} />
       <Wrapper dangerouslySetInnerHTML={{ __html: article }}></Wrapper>
       <PostFooter>
         <Hashtags>
@@ -111,21 +84,7 @@ export default function Post() {
     </Container>
   );
 }
-const ProgressTitle = styled.h2`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 18px;
-  font-family: "BM-Pro";
-`;
-const ProgressContainer = styled.div`
-  position: relative;
-  height: ${(props) => (props.progress > 0 ? "55px" : "0")};
-  width: ${(props) => (props.progress > 0 ? "100%" : "0")};
-  position: sticky;
-  top: 0;
-`;
+
 const Box = styled.div`
   width: 32px;
   height: 32px;

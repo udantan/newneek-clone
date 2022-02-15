@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import tagObj from "../utils/tagObj";
 
-export default function Article(props) {
+const Article = React.memo((props) => {
   const cleanText = props.contentMain.replace(/<\/?[^>]+(>|$)/g, "");
   return (
     <Link to={`/post/${props.id}`}>
@@ -22,7 +22,8 @@ export default function Article(props) {
       </Container>
     </Link>
   );
-}
+});
+export default Article;
 const Container = styled.div`
   cursor: pointer;
   filter: grayscale(100%);

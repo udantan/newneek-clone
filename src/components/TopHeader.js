@@ -3,14 +3,18 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import { faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
+import ProfileMenu from "./ProfileMenu";
 
 export default function TopHeader() {
+  const user = useSelector((state) => state.userReducer.value);
+
   return (
     <>
       <Container>
         <StyledLink to={"class"}>경제기본기</StyledLink>
         <Link to={"/"}>
-          <img src={"/images/logo.png"} height={32} />
+          <img alt={"logo"} src={"/images/logo.png"} height={32} />
         </Link>
         <div style={{ display: "flex", borderCollapse: "collapse" }}>
           <Link to={"search"}>
@@ -18,11 +22,15 @@ export default function TopHeader() {
               <FontAwesomeIcon icon={faSearch} size="1x" color="black" />
             </Box>
           </Link>
-          <Link to={"login"}>
-            <Box style={{ borderLeft: "0" }}>
-              <FontAwesomeIcon icon={faUser} size="1x" color="black" />
-            </Box>
-          </Link>
+          <Box style={{ borderLeft: "0" }}>
+            {user === null ? (
+              <Link to={"login"}>
+                <FontAwesomeIcon icon={faUser} size="1x" color="black" />
+              </Link>
+            ) : (
+              <ProfileMenu emoji={user.emoji} />
+            )}
+          </Box>
         </div>
       </Container>
     </>

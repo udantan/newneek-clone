@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import Footer from "./components/Footer";
 import TopHeader from "./components/TopHeader";
@@ -7,6 +7,8 @@ import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import ScrollToTop from "./utils/ScrollToTop";
 import "../src/index.css";
+import { useDispatch } from "react-redux";
+import { login } from "./redux/userReducer";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -15,6 +17,13 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 export default function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user) {
+      dispatch(login(JSON.parse(user)));
+    }
+  }, []);
   return (
     <BrowserRouter>
       <ScrollToTop />
