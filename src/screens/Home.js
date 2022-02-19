@@ -1,21 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import TagNav from "../components/TagNav";
 import styled from "styled-components";
 import colors from "../utils/colors";
 import Intro from "../components/Intro";
 import ArticlesContainer from "../components/ArticlesContainer";
 import { useSelector } from "react-redux";
+import Loading from "../components/Loading";
 
 export default function Home() {
   const user = useSelector((state) => state.userReducer.value);
-
+  const [loading, setLoading] = useState(false);
   return (
     <>
-      {/* {loading && articles.length < 1 && <Loading />} */}
+      {loading && <Loading />}
       <div>
         {user === null ? <Intro /> : null}
         <TagNav />
-        <ArticlesContainer />
+        <ArticlesContainer loading={loading} setLoading={setLoading} />
       </div>
     </>
   );

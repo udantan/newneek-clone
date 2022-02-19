@@ -4,16 +4,19 @@ import styled from "styled-components";
 import colors from "../utils/colors";
 import Article from "./Article";
 
-export default function ArticlesContainer() {
+export default function ArticlesContainer({ loading, setLoading }) {
   const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [offset, setOffset] = useState(0);
+  const [btnLoading, setBtnLoading] = useState(false);
+
   const getArticles = async () => {
-    setLoading(true);
+    offset === 0 && setLoading(true);
+    setBtnLoading(true);
     let URL = "https://api.newneek.co/postview/articles";
     const { data } = await axios.get(URL, { params: { offset: offset, limit: 12 } });
     setArticles([...articles, ...data]);
-    setLoading(false);
+    offset === 0 && setLoading(false);
+    setBtnLoading(false);
   };
 
   useEffect(() => {
@@ -29,7 +32,7 @@ export default function ArticlesContainer() {
       </GridWrapper>
       {articles.length > 0 && (
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <MoreButton disabled={loading} onClick={() => setOffset(offset + 12)}>
+          <MoreButton disabled={btnLoading} onClick={() => setOffset(offset + 12)}>
             더보기
           </MoreButton>
         </div>
